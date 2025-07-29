@@ -1,0 +1,226 @@
+body {
+    font-family: 'Raleway', sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    color: #333;
+}
+
+.main-header {
+    background-color: #202020;
+    padding: 1rem 0;
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    list-style: none;
+}
+
+.navbar a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.navbar a.active,
+.navbar a:hover {
+    color: #fd3535;
+    text-decoration: underline;
+}
+
+
+.info-container {
+    max-width: 900px;
+    margin: auto;
+    padding: 2rem;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+
+.titulo {
+    font-family: 'Montserrat', sans-serif;
+    color: #c62828;
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+.bienvenida {
+    text-align: center;
+    font-style: italic;
+    color: #666;
+    margin-bottom: 2rem;
+}
+
+.info-contacto {
+    padding: 1rem;
+    line-height: 1.8;
+    font-size: 1.1rem;
+}
+
+.info-contacto p {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.mapa {
+    margin-top: 2rem;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+.main-footer {
+    background-color: #222;
+    color: #fff;
+    text-align: center;
+    padding: 2rem 1rem;
+}
+
+.footer-content {
+    margin-bottom: 1rem;
+}
+
+.footer-logo {
+    width: 100px;
+    margin-bottom: 1rem;
+}
+
+.social-icons a {
+    margin: 0 0.5rem;
+    font-size: 24px;
+    color: #ff0000;
+    transition: transform 0.2s ease;
+}
+
+.social-icons a:hover {
+    transform: scale(1.2);
+}
+
+a {
+    color: #c62828;
+    text-decoration: none;
+}
+
+
+
+:root {
+            --color-primario: #d32f2f;
+            --color-secundario: #b21f1f;
+            --color-acento: #fdbb2d;
+            --color-texto: #000000;
+            --color-claro: #f8f9fa;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f5f5f5;
+            color: var(--color-texto);
+            line-height: 1.6;
+        }
+        
+        .contacto-container {
+            max-width: 1000px;
+            margin: 50px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            display: grid;
+            gap: 30px;
+            position: relative;
+            align-items: center;
+            justify-items: center;
+            text-align: center;
+        }
+        
+        
+        .contacto-form {
+            padding: 30px;
+        }
+        
+        .contacto-form h2 {
+            color: var(--color-primario);
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--color-primario);
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-family: 'Poppins', sans-serif;
+            transition: all 0.3s ease;
+        }
+        
+        .form-control:focus {
+            border-color: var(--color-primario);
+            box-shadow: 0 0 0 3px rgba(26, 42, 108, 0.2);
+            outline: none;
+        }
+        
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        .btn-enviar {
+            background-color: var(--color-primario);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+        }
+        
+        .btn-enviar:hover {
+            background-color: var(--color-secundario);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn-enviar i {
+            margin-left: 8px;
+        }
+        
+        /* Validación */
+        .error {
+            color: #dc3545;
+            font-size: 0.9rem;
+            margin-top: 5px;
+            display: none;
+        }
+        
+        .form-control.error-input {
+            border-color: #dc3545;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .contacto-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .contacto-info {
+                order: 2;
+            }
+        }

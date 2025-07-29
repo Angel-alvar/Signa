@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Servicios|GrupoSigna</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">    
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/estiloinicio.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/acercastyle.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/serviciostyle.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <link rel="shortcut icon" href="{{ url_for('static', filename='images/favicon-32x32.png') }}">   
+</head>
+<body>
+<!--Barra de Navegacion-->
+ <header>
+    <nav>
+    <ul>
+                <li><img src="{{ url_for('static', filename='images/logo 4.png') }}" alt="Logo Grupo Signa" class="logo"></li>
+                <li><a href="{{ url_for('inicio') }}">Inicio</a></li>
+                <li><a href="{{ url_for('servicios') }}">Servicios</a></li>
+                <li><a href="{{ url_for('galeria') }}">Galería</a></li>
+                <li><a href="{{ url_for('contacto') }}">Contacto</a></li>
+                <li><a href="{{ url_for('acerca') }}">Nosotros</a></li>
+                <div class="dropdown">
+            </ul>
+            </nav>
+        </header>
+
+ <!-- Contenido princial-->
+    <section class="hero animate__animated animate__fadeIn">
+    <h1>Nuestros Servicios</h1>
+    <h2>Cada detalle cuenta, calidad que se nota.</h2>
+</section>
+
+<!-- Sección de Servicios -->
+   <div class="servicios-container">
+    <div class="servicios-grid">
+        <div class="servicio-card animate__animated animate__fadeInUp">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKjcPHuMgYQs4lpDICi7wqH07CZv5esCAOIw&s" alt="Letras de canal">
+            <div class="servicio-content">
+                <h2>Letras de canal</h2>
+                <p>Fabricamos letras de canal personalizadas con materiales de alta calidad para destacar tu marca con elegancia y profesionalismo.</p>
+            </div>
+        </div>
+        
+        <div class="servicio-card animate__animated animate__fadeInUp animate__delay-1s">
+            <img src="https://rgbtronics.com.mx/wp-content/uploads/2016/07/Letrero-de-LED-RGB-Tronics-538x218.jpg" alt="Letreros luminosos">
+            <div class="servicio-content">
+                <h2>Letreros luminosos</h2>
+                <p>Ofrecemos letreros luminosos LED de bajo consumo que iluminan tu negocio día y noche, aumentando tu visibilidad.</p>
+            </div>
+        </div>
+        
+        <div class="servicio-card animate__animated animate__fadeInUp animate__delay-2s">
+            <img src="https://www.letrerosenaceroinoxidable.site/wp-content/uploads/letrero-en-3d-peru.jpg" alt="Letreros 3D">
+            <div class="servicio-content">
+                <h2>Letreros 3D</h2>
+                <p>Diseñamos letreros 3D únicos y modernos que capturan la atención de tus clientes y diferencian tu negocio.</p>
+            </div>
+        </div>
+
+         <div class="servicio-card animate__animated animate__fadeInUp animate__delay-2s">
+            <img src="https://vinilosparapared.pe/wp-content/uploads/2024/05/Impresion-de-Vinilos-Adhesivo-Economicos.webp "alt="Impresion Vinil">
+            <div class="servicio-content">
+                <h2>Impresiones en vinil</h2>
+                <p>Flexible y resistente, excelente para pancartas y señalizacion</p>
+            </div>
+        </div>
+
+            <div class="servicio-card animate__animated animate__fadeInUp animate__delay-2s">
+            <img src="https://artigama.es/wp-content/uploads/2015/12/vehiculo.png "alt="Rotulacion">
+            <div class="servicio-content">
+                <h2>Rotulacion</h2>
+                <p>Rotulacion Vehicular a tu gusto.</p>
+            </div>
+        </div>
+
+        <div class="servicio-card animate__animated animate__fadeInUp animate__delay-2s">
+            <img src="https://www.desitec.com.mx/wp-content/uploads/2024/10/Todos-los-tipos-de-senaletica.webp "alt="Señalizacion">
+         <div class="servicio-content">
+                <h2>Señalizacion</h2>
+                <p>...</p>
+            </div>
+        </div>
+    </div>
+
+
+
+        <h2>Materiales de alta calidad</h2>
+        <p>Utilizamos materiales de primera calidad para garantizar la durabilidad y resistencia de nuestros productos.</p>
+<div class="materiales-grid">
+        <div class="material-card">
+            <img src="https://aislamart.mx/wp-content/uploads/2020/10/Panel-de-PVC-rigido-RP-300.png" alt="PVC">
+            <div class="material-body">
+                <h3 class="card-title">PVC (Cloruro de polivinilo)</h3>
+                <p class="card-text">Material ligero, resistente a la intemperie y fácil de trabajar. Perfecto para letreros duraderos con acabados precisos.</p>
+            </div>
+        </div>
+        
+        <div class="material-card">
+            <img src="https://www.alucobond.com/assets/images/3/3a-composites-arch-content-produkte_04-858fc592.jpg" alt="Alucobond">
+            <div class="material-body">
+                <h3 class="card-title">Alucobond</h3>
+                <p class="card-text">Paneles compuestos de aluminio de alta resistencia, ideales para fachadas y letreros exteriores de larga duración.</p>
+            </div>
+        </div>
+        
+        <div class="material-card">
+            <img src="https://static.wixstatic.com/media/40ea86_a30be661ee9b4eec8da1021893435225~mv2.jpg/v1/fill/w_640,h_474,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/40ea86_a30be661ee9b4eec8da1021893435225~mv2.jpg" alt="Madera">
+            <div class="material-body">
+                <h3 class="card-title">Madera Premium</h3>
+                <p class="card-text">Aporta calidez y un acabado natural exclusivo, con tratamientos especiales para resistir las condiciones climáticas.</p>
+            </div>
+        </div>
+        
+        <div class="material-card">
+            <img src="https://metalacrilicos.com/images/laminas-acrilico.jpg" alt="Acrílico">
+            <div class="material-body">
+                <h3 class="card-title">Acrílico de Primera</h3>
+                <p class="card-text">Material versátil y resistente, perfecto para letreros luminosos y aplicaciones donde se busca transparencia o colores vibrantes.</p>
+            </div>
+        </div>
+    </div>
+</section>
+</div>
+
+    
+
+
+<!-- Footer -->
+ <footer>
+    <div class="footer-container">
+        <div class="footer-col">
+            <p>¿Tienes dudas? Escríbenos a:</p>
+            <p>
+                <span class="material-icons">mail</span>
+                <a href="mailto:disenogruposigna@gmail.com  ">disenogruposigna@gmail.com</a>
+            </p>
+            <p>
+                <span class="material-icons">phone</span>
+                <a href="tel:6462066098">646-206-6098</a>
+            </p>
+            <p>
+                <span class="material-icons">location_on</span>
+        Av. Espinoza entre 3ra y cuarta, Colonia Obrera Ensenada,BC.
+            </p>
+
+        </div>
+        <div class="footer-col">
+            <img src="{{ url_for('static', filename='images/logo 3.png') }}" alt="Logo Grupo Signa" class="imagenes">
+            <p>Visítanos en nuestras redes sociales:</p>
+             <a href="https://instagram.com" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://facebook.com" target="_blank" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
+                <a href="https://wa.me/526462066098" target="_blank" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+        </div>
+    </div>
+    <p style="text-align:center;">© 2025 GrupoSigna. Todos los derechos reservados.</p>
+</footer>
+<script src="{{ url_for('static', filename='js/slideshow.js') }}"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+
+</body>
+</html>

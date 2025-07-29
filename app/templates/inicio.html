@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Grupo Signa</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/estiloinicio.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/acercastyle.css') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='images/favicon-32x32.png') }}">
+</head>
+
+ <header>
+    <nav>
+    <ul>
+                <li><img src="{{ url_for('static', filename='images/logo 4.png') }}" alt="Logo Grupo Signa" class="logo"></li>
+                <li><a href="{{ url_for('inicio') }}">Inicio</a></li>
+                <li><a href="{{ url_for('servicios') }}">Servicios</a></li>
+                <li><a href="{{ url_for('galeria') }}">Galería</a></li>
+                <li><a href="{{ url_for('contacto') }}">Contacto</a></li>
+                <li><a href="{{ url_for('acerca') }}">Nosotros</a></li>
+            </ul>
+            </nav>
+        </header>
+
+      
+<body>
+      <!-- Slideshow mejorado -->
+    <div class="hero-slideshow">
+        <!-- Slide 1 -->
+        <div class="slide active" style="background-image: url('{{ url_for('static', filename='images/1.jpg') }}')">
+            <div class="slide-content">
+                <h2 class="animate__animated animate__fadeInDown">Letreros que Destacan</h2>
+                <p class="animate__animated animate__fadeInUp animate__delay-1s">Diseños personalizados para hacer brillar tu marca</p>
+                <a href="{{ url_for('servicios') }}" class="slide-btn animate__animated animate__fadeInUp animate__delay-2s">Ver Servicios</a>
+            </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="slide" style="background-image: url('{{ url_for('static', filename='images/2.jpg') }}')">
+            <div class="slide-content">
+                <h2 class="animate__animated animate__fadeInDown">Calidad y Durabilidad</h2>
+                <p class="animate__animated animate__fadeInUp animate__delay-1s">Materiales premium para resultados excepcionales</p>
+                <a href="{{ url_for('galeria') }}" class="slide-btn animate__animated animate__fadeInUp animate__delay-2s">Ver Galería</a>
+            </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="slide" style="background-image: url('{{ url_for('static', filename='images/slide1.jpg') }}')">
+            <div class="slide-content">
+                <h2 class="animate__animated animate__fadeInDown">Soluciones Creativas</h2>
+                <p class="animate__animated animate__fadeInUp animate__delay-1s">Innovación en cada proyecto que realizamos</p>
+                <a href="{{ url_for('contacto') }}" class="slide-btn animate__animated animate__fadeInUp animate__delay-2s">Contáctanos</a>
+            </div>
+        </div>
+
+        <!-- Controles de navegación -->
+        <div class="slide-nav">
+            <div class="slide-nav-btn prev-slide">
+                <i class="fas fa-chevron-left"></i>
+            </div>
+            <div class="slide-nav-btn next-slide">
+                <i class="fas fa-chevron-right"></i>
+            </div>
+        </div>
+
+        <!-- Indicadores -->
+        <div class="slide-controls">
+            <div class="slide-dot active" data-slide="0"></div>
+            <div class="slide-dot" data-slide="1"></div>
+            <div class="slide-dot" data-slide="2"></div>
+        </div>
+    </div>
+<!-- FAQ Mejorado -->
+<section class="faq my-5 py-4 bg-light">
+    <div class="container">
+        <h2 class="text-center mb-4">Preguntas Frecuentes</h2>
+        <div class="accordion" id="faqAccordion">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="faq1">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1">
+                        ¿Cuánto tarda la fabricación de un letrero?
+                    </button>
+                </h2>
+                <div id="collapse1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        El tiempo depende del tipo y tamaño de tu letrero. Generalmente va de 5 a 10 días hábiles.
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="faq2">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2">
+                        ¿Ofrecen instalación?
+                    </button>
+                </h2>
+                <div id="collapse2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        Sí, contamos con servicio de instalación profesional en Ensenada y alrededores.
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="faq3">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3">
+                        ¿Hacen diseños desde cero?
+                    </button>
+                </h2>
+                <div id="collapse3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        Claro, cada proyecto es único y trabajamos contigo para crear algo 100% personalizado y a tu gusto.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Testimonios Mejorado -->
+<section class="testimonios py-5">
+    <div class="container">
+        <h2 class="text-center mb-4">Lo que dicen nuestros clientes</h2>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card shadow h-100">
+                    <div class="card-body">
+                        <p class="card-text">"Excelente servicio y super personalizado."</p>
+                        <h6 class="card-subtitle text-muted mt-2">— Eliud Salcedo</h6>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card shadow h-100">
+                    <div class="card-body">
+                        <p class="card-text">"Excelente calidad y servicio. Tienen las mejores herramientas de fabricación."</p>
+                        <h6 class="card-subtitle text-muted mt-2">— César Romero</h6>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card shadow h-100">
+                    <div class="card-body">
+                        <p class="card-text">"Se la rifan con los diseños."</p>
+                        <h6 class="card-subtitle text-muted mt-2">— Juan Cuadras</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+   <!-- CTA QUE TE DAN GANAS DE COMPRAR -->
+    <section class="cta-section">
+        <div class="container cta-content" data-aos="fade-up">
+            <h2>¿Listo para transformar tu imagen?</h2>
+            <p>Contáctanos hoy mismo y recibe un presupuesto personalizado sin compromiso</p>
+            <a href="{{ url_for('contacto') }}" class="btn btn-cta">¡Quiero mi letrero!</a>
+        </div>
+    </section>
+
+
+    <footer>
+    <div class="footer-container">
+        <div class="footer-col">
+            <p>¿Tienes dudas? Escríbenos a:</p>
+            <p>
+                <span class="material-icons">mail</span>
+                <a href="mailto:disenogruposigna@gmail.com  ">disenogruposigna@gmail.com</a>
+            </p>
+            <p>
+                <span class="material-icons">phone</span>
+                <a href="tel:6462066098">646-206-6098</a>
+            </p>
+            <p>
+                <span class="material-icons">location_on</span>
+        Av. Espinoza entre 3ra y cuarta, Colonia Obrera Ensenada,BC.
+            </p>
+
+        </div>
+        <div class="footer-col">
+            <img src="{{ url_for('static', filename='images/logo 3.png') }}" alt="Logo Grupo Signa" class="imagenes">
+            <p>Visítanos en nuestras redes sociales:</p>
+            
+             <a href="https://instagram.com" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://facebook.com" target="_blank" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
+            <a href="https://wa.me/526462066098" target="_blank" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+        </div>
+    </div>
+    <p style="text-align:center;">© 2025 GrupoSigna. Todos los derechos reservados.</p>
+</footer>
+<script src="{{ url_for('static', filename='js/slideshow.js') }}"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+
+   <!-- Scripts mamalones -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Inicializar AOS (Animate On Scroll)
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+        
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar-custom');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+        
+        // Smooth scroll para los links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+
+
+</body>
+
+</html>

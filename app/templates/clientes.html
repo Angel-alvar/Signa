@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Grupo Signa</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='images/favicon-32x32.png') }}">
+    <style>
+        :root {
+            --color-primario: #1a2a6c;
+            --color-secundario: #b21f1f;
+            --color-acento: #fdbb2d;
+            --color-texto: #333;
+            --color-claro: #f8f9fa;
+        }
+
+        /* Slideshow mejorado */
+        .hero-slideshow {
+            position: relative;
+            width: 100%;
+            height: 80vh;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+            margin: 30px 0;
+        }
+
+        .slide {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: all 1.5s ease;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+
+        .slide.active {
+            opacity: 1;
+            z-index: 1;
+        }
+
+        .slide::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            z-index: 0;
+        }
+
+        .slide-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            padding: 0 20px;
+            transform: translateY(50px);
+            transition: transform 1s ease;
+            opacity: 0;
+        }
+
+        .slide.active .slide-content {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .slide h2 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        .slide p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+        }
+
+        .slide-btn {
+            background-color: var(--color-acento);
+            color: var(--color-texto);
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-block;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .slide-btn:hover {
+            background-color: white;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Controles del slideshow */
+        .slide-controls {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+            display: flex;
+            gap: 10px;
+        }
+
+        .slide-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .slide-dot.active {
+            background-color: white;
+            transform: scale(1.3);
+        }
+
+        .slide-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 20px;
+            z-index: 10;
+        }
+
+        .slide-nav-btn {
+            background-color: rgba(255, 255, 255, 0.2);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1.5rem;
+            backdrop-filter: blur(5px);
+        }
+
+        .slide-nav-btn:hover {
+            background-color: var(--color-acento);
+            color: var(--color-texto);
+            transform: scale(1.1);
+        }
+
+        /* Animaciones */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .animate-fade {
+            animation: fadeIn 1.5s ease forwards;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-slideshow {
+                height: 60vh;
+            }
+
+            .slide h2 {
+                font-size: 2rem;
+            }
+
+            .slide p {
+                font-size: 1rem;
+            }
+
+            .slide-nav-btn {
+                width: 40px;
+                height: 40px;
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Slideshow mejorado -->
+    <div class="hero-slideshow">
+        <!-- Slide 1 -->
+        <div class="slide active" style="background-image: url('{{ url_for('static', filename='images/1.jpg') }}')">
+            <div class="slide-content">
+                <h2 class="animate__animated animate__fadeInDown">Letreros que Destacan</h2>
+                <p class="animate__animated animate__fadeInUp animate__delay-1s">Diseños personalizados para hacer brillar tu marca</p>
+                <a href="{{ url_for('servicios') }}" class="slide-btn animate__animated animate__fadeInUp animate__delay-2s">Ver Servicios</a>
+            </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="slide" style="background-image: url('{{ url_for('static', filename='images/2.jpg') }}')">
+            <div class="slide-content">
+                <h2 class="animate__animated animate__fadeInDown">Calidad y Durabilidad</h2>
+                <p class="animate__animated animate__fadeInUp animate__delay-1s">Materiales premium para resultados excepcionales</p>
+                <a href="{{ url_for('galeria') }}" class="slide-btn animate__animated animate__fadeInUp animate__delay-2s">Ver Galería</a>
+            </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="slide" style="background-image: url('{{ url_for('static', filename='images/3.jpg') }}')">
+            <div class="slide-content">
+                <h2 class="animate__animated animate__fadeInDown">Soluciones Creativas</h2>
+                <p class="animate__animated animate__fadeInUp animate__delay-1s">Innovación en cada proyecto que realizamos</p>
+                <a href="{{ url_for('contacto') }}" class="slide-btn animate__animated animate__fadeInUp animate__delay-2s">Contáctanos</a>
+            </div>
+        </div>
+
+        <!-- Controles de navegación -->
+        <div class="slide-nav">
+            <div class="slide-nav-btn prev-slide">
+                <i class="fas fa-chevron-left"></i>
+            </div>
+            <div class="slide-nav-btn next-slide">
+                <i class="fas fa-chevron-right"></i>
+            </div>
+        </div>
+
+        <!-- Indicadores -->
+        <div class="slide-controls">
+            <div class="slide-dot active" data-slide="0"></div>
+            <div class="slide-dot" data-slide="1"></div>
+            <div class="slide-dot" data-slide="2"></div>
+        </div>
+    </div>
+
+    <script>
+        // Slideshow mejorado
+        document.addEventListener('DOMContentLoaded', function() {
+            const slides = document.querySelectorAll('.slide');
+            const dots = document.querySelectorAll('.slide-dot');
+            const prevBtn = document.querySelector('.prev-slide');
+            const nextBtn = document.querySelector('.next-slide');
+            let currentSlide = 0;
+            let slideInterval;
+
+            // Función para cambiar de slide
+            function goToSlide(n) {
+                slides[currentSlide].classList.remove('active');
+                dots[currentSlide].classList.remove('active');
+                currentSlide = (n + slides.length) % slides.length;
+                slides[currentSlide].classList.add('active');
+                dots[currentSlide].classList.add('active');
+                
+                // Reiniciar animaciones
+                const content = slides[currentSlide].querySelector('.slide-content');
+                content.classList.remove('animate__animated', 'animate__fadeInDown', 'animate__fadeInUp');
+                void content.offsetWidth; // Trigger reflow
+                content.querySelector('h2').classList.add('animate__animated', 'animate__fadeInDown');
+                content.querySelector('p').classList.add('animate__animated', 'animate__fadeInUp', 'animate__delay-1s');
+                content.querySelector('.slide-btn').classList.add('animate__animated', 'animate__fadeInUp', 'animate__delay-2s');
+            }
+
+            // Función para siguiente slide
+            function nextSlide() {
+                goToSlide(currentSlide + 1);
+            }
+
+            // Función para slide anterior
+            function prevSlide() {
+                goToSlide(currentSlide - 1);
+            }
+
+            // Event listeners para botones
+            nextBtn.addEventListener('click', nextSlide);
+            prevBtn.addEventListener('click', prevSlide);
+
+            // Event listeners para dots
+            dots.forEach(dot => {
+                dot.addEventListener('click', function() {
+                    goToSlide(parseInt(this.dataset.slide));
+                });
+            });
+
+            // Autoplay
+            function startSlideShow() {
+                slideInterval = setInterval(nextSlide, 5000);
+            }
+
+            function pauseSlideShow() {
+                clearInterval(slideInterval);
+            }
+
+            // Pausar al interactuar
+            document.querySelector('.hero-slideshow').addEventListener('mouseenter', pauseSlideShow);
+            document.querySelector('.hero-slideshow').addEventListener('mouseleave', startSlideShow);
+
+            // Iniciar slideshow
+            startSlideShow();
+
+            // Keyboard navigation
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'ArrowLeft') {
+                    prevSlide();
+                } else if (e.key === 'ArrowRight') {
+                    nextSlide();
+                }
+            });
+        });
+    </script>
+</body>
+</html>

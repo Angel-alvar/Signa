@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Contacto | Grupo Signa</title>
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">    
+
+
+    <!-- Estilos locales -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/galeriaestilo.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/estiloinicio.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/contactstyle.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/acercastyle.css') }}">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    
+    <!-- Iconos -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+
+        <link rel="shortcut icon" href="{{ url_for('static', filename='images/favicon-32x32.png') }}">
+
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+              <li><img src="{{ url_for('static', filename='images/logo 4.png') }}" alt="Logo Grupo Signa" class="logo"></li>
+                <li><a href="{{ url_for('inicio') }}">Inicio</a></li>
+                <li><a href="{{ url_for('servicios') }}">Servicios</a></li>
+                <li><a href="{{ url_for('galeria') }}">Galería</a></li>
+                <li><a href="{{ url_for('contacto') }}">Contacto</a></li>
+                <li><a href="{{ url_for('acerca') }}">Nosotros</a></li>
+            </ul>
+          </nav>
+        </header>
+
+    <main class="info-container">
+        <h1 class="titulo">Contacto</h1>
+        <p class="bienvenida">¡Visítanos hoy mismo!</p>
+
+        <div class="info-contacto">
+            <p><strong>¿Tienes dudas o necesitas más información?</strong></p>
+            <p><span class="material-icons">location_on</span> Av. Espinoza entre 3ra y 4ta, Col. Obrera, Ensenada, B.C.</p>
+            <p><span class="material-icons">schedule</span> Lunes a Viernes de 8:00 a 18:00</p>
+            <p><span class="material-icons">call</span> <a href="tel:+526462066098">646-206-6098</a></p>
+            <p><span class="material-icons">email</span> <a href="mailto:disenogruposigna@gmail.com">disenogruposigna@gmail.com</a></p>
+        </div>
+
+        <div class="mapa">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!4v1752772223114!6m8!1m7!1sBiAo8kj3zYfOqg32DVihcg!2m2!1d31.86262706846097!2d-116.6167848747929!3f330.45849693229053!4f0.7403402957658898!5f0.7820865974627469" 
+                width="100%" 
+                height="450" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+            
+        </div>
+    </main>
+
+
+
+    <!-- Form -->
+
+    <div class="contacto-container">
+        <div class="contacto-form">
+            <h2>Contáctanos</h2>
+            <p>Escríbenos y te responderemos a la brevedad.</p>
+            
+            <form id="formularioContacto" method="post" action="/enviar-formulario">
+                <div class="form-group">
+                    <label for="nombre">Nombre completo</label>
+                    <input type="text" id="nombre" name="nombre" class="form-control" placeholder="Ej. Juan Pérez" required>
+                    <div class="error" id="errorNombre">Por favor ingresa tu nombre</div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Correo electrónico</label>
+                    <input type="email" id="email" name='email' class="form-control" placeholder="Ej. ejemplo@dominio.com" required>
+                    <div class="error" id="errorEmail">Por favor ingresa un email válido</div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="telefono">Teléfono De Contacto</label>
+                    <input type="tel" id="telefono" name='telefono' class="form-control" placeholder="Ej. 6461234567">
+                </div>
+
+                 <div class="form-group">
+                    <label for="asunto">Asunto</label>
+                    <input type="text" id="asunto" name='asunto' class="form-control" placeholder="Asunto del mensaje" required>
+                    <div class="error" id="errorAsunto">Por favor ingresa el asunto</div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="mensaje">Mensaje</label>
+                    <textarea id="mensaje" name='mensaje' class="form-control" placeholder="Cuéntanos sobre tu proyecto..." required></textarea>
+                    <div class="error" id="errorMensaje">Por favor escriba su mensaje</div>
+                </div>
+                
+                <button type="submit" class="btn-enviar">
+                    Enviar mensaje <i class="fas fa-paper-plane"></i>
+                </button>
+            </form>
+        </div>
+    </div>
+
+       
+
+
+   
+
+
+    <footer class="main-footer">
+        <div class="footer-content"> 
+            <img src="{{ url_for('static', filename='images/logo 3.png') }}" alt="Logo Grupo Signa" class="footer-logo">
+            <p>Visítanos en nuestras redes sociales:</p>
+            <div class="social-icons">
+                <a href="https://instagram.com" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://facebook.com" target="_blank" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
+                <a href="https://wa.me/526462066098" target="_blank" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+            </div>
+        </div>
+        <p class="copyright">© 2025 Grupo Signa. Todos los derechos reservados.</p>
+    </footer>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+<script src="{{ url_for('static', filename='js/form.js') }}"></script>
+</body>
+</html>
