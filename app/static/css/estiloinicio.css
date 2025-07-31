@@ -124,6 +124,27 @@ body {
             padding: 12px 18px;
             border-radius: 8px;
         }
+
+          .instagram-widget {
+    max-width: 540px;
+    margin: 20px auto;
+    padding: 15px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  }
+
+  .column {
+    flex: 50%;
+  }
+
+  .row{
+    content: "";
+    display: flex;
+    clear: both;
+  }
+
+
         /* --------- Navegación --------- */
         ul {
     list-style-type: none;

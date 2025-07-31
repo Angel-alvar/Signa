@@ -132,7 +132,7 @@
             position: absolute;
             width: 80px;
             height: 4px;
-            background-color: var(--color-acento);
+            background-color: #d32f2f;
             bottom: 0;
             left: 50%;
             transform: translateX(-50%);
@@ -246,86 +246,6 @@
             color: white;
         }
 
-        /* Footer mejorado */
-        footer {
-            background-color: #111;
-            color: white;
-            padding: 60px 0 20px;
-            margin-top: 60px;
-        }
-
-        .footer-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-            padding: 0 20px;
-        }
-
-        .footer-col h3 {
-            color: white;
-            font-size: 1.3rem;
-            margin-bottom: 20px;
-            position: relative;
-            padding-bottom: 10px;
-        }
-
-        .footer-col h3::after {
-            content: '';
-            position: absolute;
-            width: 50px;
-            height: 3px;
-            background-color: var(--color-acento);
-            bottom: 0;
-            left: 0;
-        }
-
-        .footer-col p, .footer-col a {
-            opacity: 0.8;
-            margin-bottom: 15px;
-            display: block;
-            color: white;
-            text-decoration: none;
-            transition: var(--transicion);
-        }
-
-        .footer-col a:hover {
-            opacity: 1;
-            color: var(--color-acento);
-        }
-
-        .social-icons {
-            margin-top: 20px;
-        }
-
-        .social-icons a {
-            display: inline-block;
-            width: 40px;
-            height: 40px;
-            background-color: rgba(255, 255, 255, 0.1);
-            color: white;
-            border-radius: 50%;
-            text-align: center;
-            line-height: 40px;
-            margin-right: 10px;
-            transition: var(--transicion);
-        }
-
-        .social-icons a:hover {
-            background-color: var(--color-acento);
-            color: var(--color-texto);
-            transform: translateY(-5px);
-        }
-
-        .copyright {
-            text-align: center;
-            padding-top: 30px;
-            margin-top: 30px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            font-size: 0.9rem;
-            opacity: 0.7;
-        }
 
         /* Animaciones */
         @keyframes fadeIn {

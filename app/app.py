@@ -84,8 +84,8 @@ def enviar_formulario():
     db.session.commit() 
 
     msg = Message(
-        subject=f'{asunto}',
-        sender=email,
+        subject=f'{asunto} - Mensaje de {nombre}',
+        sender=email,  # Aquí usas el correo del usuario
         recipients=['oddimuffi@gmail.com'],
         body=f'Nombre: {nombre}\nEmail: {email}\nTeléfono: {telefono}\nAsunto:{asunto}\nMensaje: {mensaje}')
     mail.send(msg)
