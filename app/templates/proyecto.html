@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
     <link rel="stylesheet" href="{{ url_for('static', filename='css/estiloinicio.css') }}">
     <link rel='stylesheet' href="{{ url_for('static', filename='css/galeriaestilo.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/acercastyle.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/proyectstyle.css') }}">
     <link rel="shortcut icon" href="{{ url_for('static', filename='images/favicon-32x32.png') }}">
 </head>
@@ -19,10 +18,10 @@
 {% include 'header.html' %}
 
 <main class="container my-5">
-  <div class="row align-items-center proyecto-card shadow p-4 rounded">
+  <div class="row align-items-center proyecto-card shadow-lg p-4 rounded">
     <!-- Imagen a la izquierda -->
     <div class="col-md-6 text-center">
-      <img src="{{ proyecto.imagen_path }}" alt="Imagen del proyecto {{ proyecto.nombre_proyecto }}" class="img-fluid rounded">
+      <img src="{{ proyecto.imagen_path }}" alt="Imagen del proyecto {{ proyecto.nombre_proyecto }}" class="img-fluid rounded border border-3 border-primary shadow-sm">
     </div>
 
     <!-- Descripción a la derecha -->
@@ -30,7 +29,7 @@
       <h1>{{ proyecto.nombre_proyecto }}</h1>
       <p><strong>Descripción:</strong> {{ proyecto.descripcion }}</p>
 
-      <a href="{{ url_for('galeria') }}" class="btn btn-outline-primary mt-3">
+      <a href="{{ url_for('galeria') }}" class="btn-volver">
         <span class="material-icons" style="vertical-align:middle;">arrow_back</span>
         Volver a galería
       </a>

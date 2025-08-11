@@ -11,7 +11,7 @@
     }
 
     .proyecto-card {
-      background: #fff;
+      background: #ffffff;
       border-radius: 16px;
       box-shadow: 0 4px 24px rgba(0,0,0,0.08);
       padding: 40px 32px;
@@ -20,7 +20,7 @@
       text-align: center;
     }
     .proyecto-card h1 {
-      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      font-family: 'Montserrat', Arial, sans-serif;
       font-size: 2.5rem;
       color: #ff0000;
       margin-bottom: 20px;
